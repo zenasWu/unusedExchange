@@ -1,0 +1,42 @@
+{
+  "name": "unusedchange",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --hot --inline --content-base ./dist/  --color --progress --open "
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  },
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zenasWu/unusedchange.git"
+  },
+  "keywords": [
+    "unusedGoods"
+  ],
+  "author": "zenas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zenasWu/unusedchange/issues"
+  },
+  "homepage": "https://github.com/zenasWu/unusedchange#readme",
+  "description": ""
+}
