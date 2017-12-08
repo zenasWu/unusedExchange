@@ -13,7 +13,6 @@ module.exports = {
       ],
       exclude: [
         path.resolve(__dirname, 'node_modules'),
-        path.resolve(__dirname, 'bower_components')
       ],
       loader: 'babel-loader',
      
