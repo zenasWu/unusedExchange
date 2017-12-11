@@ -1,0 +1,24 @@
+@import '../glob.scss';
+.nav-side {
+    float: left;
+    width: 150px;
+    min-height: 50px;
+    .nav-item {
+        line-height: 25px;
+        font-size: 13px;
+        .link {
+            color: #888888;
+        }
+        
+        &.active {
+            .link {
+                color: $themeColor;
+            }
+        }
+    }
+}
+
+.content.with-nav {
+    float: left;
+    width: 930px;
+}

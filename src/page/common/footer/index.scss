@@ -1,0 +1,18 @@
+.footer {
+    text-align: center;
+    .links {
+        a {
+            line-height:26px;
+            padding: 0 10px;
+            border-right: 2px solid #666666;
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+    .copyright {
+        text-align: center;
+        color: #666666;
+        line-height: 26px;
+    }
+}
