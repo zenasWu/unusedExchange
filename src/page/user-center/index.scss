@@ -1,0 +1,20 @@
+.form-line {
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    padding-bottom: 10px;
+    .label {
+        width: 100px;
+        display: inline-block;
+        text-align: right;
+        font-weight: bold;
+    }
+    .text {
+        display: inline-block;
+        margin-left: 10px;
+    }
+}
+
+.btn-submit {
+    float: right;
+}

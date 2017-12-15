@@ -4,7 +4,8 @@ const hogan = require('hogan');
 
 
 var conf = {
-    serverHost: '',
+    serverHost: 'http://mock.eolinker.com/UnjSQEVb161df0aeb93cb37cfeb9e24b95cd29e84dedbbf?uri=',
+    // serverHost:''
 }
 var _util = {
     request: function (para) {
@@ -14,15 +15,15 @@ var _util = {
             url: para.url || '',
             dataType: para.type || 'json',
             data: para.data || '',
-            success: function (res) {
-                if (0 === res.status) {
+            success: function (response) {
+                if (0 === response.status) {
                     //请求成功
-                    typeof para.success === 'function' && para.success(res.data, res.msg);
-                } else if (10 === status) {
+                    typeof para.success === 'function' && para.success(response.data, response.msg);
+                } else if (10 === response.status) {
                     //未登录状态
                     _this.doLogin();
-                } else if (0 === status) {
-                    typeof para.error === 'function' && para.error(res.msg);
+                } else if (0 != response.status) {
+                    typeof para.error === 'function' && para.error(response.msg);
                 }
             },
             error: function (err) {
@@ -32,7 +33,7 @@ var _util = {
     },
     //登陆处理
     doLogin: function () {
-        window.location.href= './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href= './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     //回到主页
     goHome: function () {
@@ -40,7 +41,7 @@ var _util = {
     },
     //获取服务器地址
     getServerUrl: function (path) {
-        return confirm.serverHost + path;
+        return conf.serverHost + path;
     },
     //获取URL参数
     getUrlParam: function (name) {

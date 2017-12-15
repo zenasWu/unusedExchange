@@ -1,0 +1,90 @@
+@import '../common/glob.scss';
+.content {
+    display: flex;
+    flex-direction: column;
+    .page-wrap {
+        padding: 40px 0;
+        background: $themesubColor;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        .w {
+            flex: none;
+            .user-con {
+                margin: 0 auto;
+                width: 400px;
+                background: #ffffff;
+                position: relative;
+                .user-title {
+                    text-align: center;
+                    padding: 10px 0;
+                    columns: #666666;
+                    border-bottom: 1px solid #666666;
+                    font-size: 20px;
+                }
+                .user-box {
+                    padding: 20px;
+                    .error-item {
+                        display:  none;
+                        position: relative;
+                        padding: 4px 0 4px 40px;
+                        margin-bottom: 10px;
+                        border: 1px solid red;
+                        color: red;
+                        $errorSize: 14px;
+                        font-size: $errorSize;
+                        height: 20px;
+                        line-height: 20px;
+                        background: rgb(255, 159, 159);
+                        .error-icon {
+                            position: absolute;
+                            left: 14px;
+                            top: 50%;
+                            font-size: $errorSize;
+                            margin-top: -($errorSize/2);
+                        }
+                    }
+                    .user-item {
+                        position: relative;
+                        margin-bottom: 20px;
+                        .user-label {
+                            position: absolute;
+                            top: 1px;
+                            bottom: 1px;
+                            left: 1px;
+                            width: 40px;
+                            line-height: 36px;
+                            background: #bdbdbd;
+                            font-size: 18px;
+                            color: #f8f8f8;
+                            text-align: center;
+                        }
+                        .user-content {
+                            padding: 10px 0 10px 50px;
+                            width: 308px;
+                            height: 18px;
+                            line-height: 18px;
+                            font-size: 15px;
+                            border: 1px solid #bdbdbd;
+                            outline:none;
+                        }
+                    }
+                    .btn-submit {
+                        width: 100%;
+                        padding: 2px 0;
+                        text-align: center;
+                        font-size: 22px;
+                    }
+                    .link-item {
+                        text-align: right;
+                        margin-top: 10px;
+                        .link {
+                            margin-left: 10px;
+                            columns: #999999;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

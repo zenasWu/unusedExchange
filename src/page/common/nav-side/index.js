@@ -12,8 +12,9 @@ var navSide = {
         activeName:'',
         navList :[
             {name:'user-center',desc:'个人中心',href:'./user-center.html'},
-            {name:'order-list',desc:'我的订单',href:'./order-list.html'},
-            {name:'pw-update',desc:'修改密码',href:'./pw-update.html'},
+            {name:'order-list',desc:'我的交易',href:'./order-list.html'},
+            {name:'user-goods',desc:'我的闲置',href:'./user-goods.html'},
+            {name:'pw-update',desc:'修改密码',href:'./user-pw-update.html'},
             {name:'about',desc:'关于玄换',href:'./about.html'}
         ]
     },

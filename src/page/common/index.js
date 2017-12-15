@@ -7,6 +7,6 @@
 
 'use strict'; 
 
-require('./common.css');
+require('./common.scss');
 require('./fontawesome-all.min.css');
 require('./footer/index.scss');

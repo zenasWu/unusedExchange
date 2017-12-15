@@ -1,5 +1,6 @@
 /* css reset */
 
+@import './glob.scss';
 body,
 h1,
 h2,
@@ -116,7 +117,7 @@ table {
 }
 
 .link:hover {
-    color: #FFDA44
+    color: $themeColor
 }
 
 .link-text {
@@ -136,7 +137,7 @@ table {
     height: 40px;
     line-height: 40px;
     border: none;
-    background: #FFDA44;
+    background: $themeColor;
     cursor: pointer;
     color: #ffffff;
     text-decoration: none
@@ -152,22 +153,40 @@ table {
 .loading {
     display: block;
     background: url('../../image/loading.gif');
-    height: 150px;
-    width: 150px;
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    margin: 10px auto;
 }
 
-
-html{
+html {
     height: 100%;
 }
 
 body {
-    background: rgb(206, 206, 206);
+    background: #dbdbdb;
     min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.content{
+.content {
     flex: 1;
 }
+
+.panel {
+    padding: 10px;
+    background: #ffffff;
+    .panel-title{
+        padding: 10px;
+        font-size: 18px;
+        color: #666666;
+        font-weight: bold;
+        border-bottom: 1px solid #eeeeee;
+    }
+    .panel-body{
+        padding: 10px;
+        overflow: hidden;
+    }
+}
+

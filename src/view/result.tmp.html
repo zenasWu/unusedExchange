@@ -10,15 +10,32 @@
     <div class="content">
         <%= require('html-loader!./layout/nav-simple.html') %>
             <div class="page-wrap w">
+
+                <!-- 注册成功 -->
                 <div class="result-con register-success">
                     <h1 class="result-title">
                         注册成功!
                     </h1>
                     <div class="result-content">
                         <p>(<span class="timetoGoHome">10</span>s后回到首页)</p>
+                        <a href="./user-login.html" class="result-link">登录</a>
                         <a href="./index.html" class="result-link">回到首页</a>
                     </div>
                 </div>
+
+                <!-- 密码重设成功 -->
+                <div class="result-con pass-reset-success">
+                    <h1 class="result-title">
+                        重设密码成功!
+                    </h1>
+                    <div class="result-content">
+                        <p>(<span class="timetoGoHome">10</span>s后回到首页)</p>
+                        <a href="./user-login.html" class="result-link">登录</a>
+                        <a href="./index.html" class="result-link">回到首页</a>
+                    </div>
+                </div>
+
+                <!-- 默认结果页面 -->
                 <div class="result-con default-success">
                     <h1 class="result-title">
                         操作成功!
@@ -28,6 +45,7 @@
                         <a href="./index.html" class="result-link">回到首页</a>
                     </div>
                 </div>
+
             </div>
         </div>
     <%= require('html-loader!./layout/footer.html') %>

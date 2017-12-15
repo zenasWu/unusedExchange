@@ -1,15 +1,19 @@
 @import '../glob.scss';
+$infinity:9999px;
 .nav-side {
     float: left;
     width: 150px;
     min-height: 50px;
+    // 两栏自适应登高布局
+    // margin-bottom: -$infinity;
+    // padding-bottom: $infinity;
     .nav-item {
+        margin: 10px 4px;
         line-height: 25px;
-        font-size: 13px;
+        font-size: 18px;
         .link {
-            color: #888888;
+            color: $themesubColor;
         }
-        
         &.active {
             .link {
                 color: $themeColor;
@@ -21,4 +25,6 @@
 .content.with-nav {
     float: left;
     width: 930px;
+    // margin-bottom: -$infinity;
+    // padding-bottom: $infinity;
 }
