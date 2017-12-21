@@ -7,6 +7,7 @@ var _xh = require('../../../util/util.js');
 var header = {
     init: function () {
         this.bindEvent();
+        this.onLoad();
     },
 
     bindEvent: function () {

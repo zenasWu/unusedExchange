@@ -20,6 +20,7 @@ module.exports = {
   entry: {
     'common': path.resolve(__dirname, 'src', 'page', 'common', 'index'),
     'index': path.resolve(__dirname, 'src', 'page', 'index', 'index'),
+    'list': path.resolve(__dirname, 'src', 'page', 'list', 'index'),
     'result': path.resolve(__dirname, 'src', 'page', 'result', 'index'),
     'user-login': path.resolve(__dirname, 'src', 'page', 'user-login', 'index'),
     'user-register': path.resolve(__dirname, 'src', 'page', 'user-register', 'index'),
@@ -27,6 +28,7 @@ module.exports = {
     'user-center': path.resolve(__dirname, 'src', 'page', 'user-center', 'index'),
     'user-center-update': path.resolve(__dirname, 'src', 'page', 'user-center-update', 'index'),
     'user-pw-update': path.resolve(__dirname, 'src', 'page', 'user-pw-update', 'index'),
+    'detail': path.resolve(__dirname, 'src', 'page', 'detail', 'index'),
   },
 
   output: {
@@ -105,12 +107,14 @@ module.exports = {
     //html模板处理
     new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
     new HtmlWebpackPlugin(getHtmlConfig('result','结果')),
+    new HtmlWebpackPlugin(getHtmlConfig('list','物品列表')),
     new HtmlWebpackPlugin(getHtmlConfig('user-login','登录')),
     new HtmlWebpackPlugin(getHtmlConfig('user-register','注册')),
     new HtmlWebpackPlugin(getHtmlConfig('user-pw-reset','注册')),
     new HtmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),
     new HtmlWebpackPlugin(getHtmlConfig('user-center-update','修改个人信息')),
     new HtmlWebpackPlugin(getHtmlConfig('user-pw-update','修改密码')),
+    new HtmlWebpackPlugin(getHtmlConfig('detail','物品详情页')),
 
 
     // 独立通用模块

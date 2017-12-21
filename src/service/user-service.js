@@ -54,12 +54,10 @@ var _user = {
         })
     },
     //重设密码,发送邮件
-    sentEmail: function (email, resolve, reject) {
+    sentEmail: function (data, resolve, reject) {
         _xh.request({
             url: _xh.getServerUrl('/user/sent_email.do'),
-            data: {
-                email: email
-            },
+            data:data,
             method: 'POST',
             success: resolve,
             error: reject
@@ -69,11 +67,7 @@ var _user = {
     resetPassword: function (data, resolve, reject) {
         _xh.request({
             url: _xh.getServerUrl('/user/forget_reset_password.do'),
-            data: {
-                newPassword: data.newPassword,
-                email: data.email,
-                token: data.token
-            },
+            data: data,
             method: 'POST',
             success: resolve,
             error: reject
@@ -104,6 +98,15 @@ var _user = {
             url: _xh.getServerUrl('/user/reset_password.do'),
             method: 'POST',
             data: data,
+            success: resolve,
+            error: reject,
+        })
+    },
+
+    getMsgCount: function (resolve, reject) {
+        _xh.request({
+            url: _xh.getServerUrl('/user/get_message.do'),
+            method: 'POST',
             success: resolve,
             error: reject,
         })

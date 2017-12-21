@@ -4,8 +4,8 @@ const hogan = require('hogan');
 
 
 var conf = {
-    serverHost: 'http://mock.eolinker.com/UnjSQEVb161df0aeb93cb37cfeb9e24b95cd29e84dedbbf?uri=',
-    // serverHost:''
+    // serverHost:'http://localhost:8080',
+    serverHost:'',
 }
 var _util = {
     request: function (para) {
@@ -15,6 +15,7 @@ var _util = {
             url: para.url || '',
             dataType: para.type || 'json',
             data: para.data || '',
+            // contentType:para.contentType||'application/json; charset=utf-8',
             success: function (response) {
                 if (0 === response.status) {
                     //请求成功

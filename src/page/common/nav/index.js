@@ -3,14 +3,13 @@ require('./index.scss');
 var $ = require('jquery');
 var _xh = require('../../../util/util.js');
 var _user = require('../../../service/user-service.js');
-var _cart = require('../../../service/cart-service.js');
 
 
 //导航
 var nav = {
     init: function () {
         this.bindEvent();
-        this.loadCartCount();
+        this.loadMessage();
         this.loadUserInfo();
         return this;
     },
@@ -29,7 +28,6 @@ var nav = {
         //退出
         $('.js-logout').click(function () {
             _user.logout(function (res) {
-                $('.user.login').hide().siblings('.user.not-login').show().find('.username').text(res.username);
                 window.location.reload();
             }, function (errMsg) {
                 _xh.errorTips(errMsg);
@@ -42,16 +40,15 @@ var nav = {
         _user.checklogin(function (res) {
             $('.user.not-login').hide().siblings('.user.login').show().find('.username').text(res.username);
         }, function (errMsg) {
-            //null
-            // window.location.reload();
+            // do nothing
         })
     },
 
-    loadCartCount: function () {
-        _cart.getCartCount(function(res){
-            $('.cart-count').text(res||0);
+    loadMessage: function () {
+        _user.getMsgCount(function(res){
+            $('.msg-count').text(res.num||0);
         },function(errMsg){
-            $('.cart-count').text(0);
+            $('.msg-count').text(0);
         })
     }
 

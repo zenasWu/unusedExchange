@@ -35,7 +35,9 @@ var page = {
         $('#submit-email').click(function () {
             var email = $.trim($('#email').val());
             if (email) {
-                _user.sentEmail(email, function (res) {
+                _user.sentEmail({
+                    email:email
+                }, function (res) {
                     _this.loadStepSented();
                 }, function (errMsg) {
                     formError.show(errMsg)

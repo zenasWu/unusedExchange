@@ -1,0 +1,48 @@
+<div class="intro-wrap floatfix">
+    <div class="p-img-con">
+        <div class="main-img-con">
+            <img class="main-img" src="{{imageHost}}{{mainImage}}" alt="{{name}}">
+        </div>
+        <ul class="p-img-list">
+            {{#subImages}}
+            <li class="p-img-item">
+                <img class="p-img" src="{{imageHost}}{{.}}" alt="{{name}}">
+            </li>
+            {{/subImages}}
+        </ul>
+    </div>
+
+    <div class="p-info-con">
+        <h1 class="p-name">{{name}}</h1>
+        <p class="p-subtitle">{{subtitle}}</p>
+        <div class="p-info-item">
+            <span class="info-name">成色</span>
+            <span class="info-value">{{quality}}</span>
+        </div>
+        <div class="p-info-item">
+            <span class="info-name">所在地</span>
+            <span class="info-value">{{location}}</span>
+        </div>
+        <div class="p-info-item">
+            <span class="info-name">联系方式</span>
+            <span class="info-value">{{contact}}</span>
+        </div>
+        <div class="p-info-item">
+            <span class="info-name">交易方式</span>
+            <span class="info-value">{{trading}}</span>
+        </div>
+        <div class="p-info-item">
+            <a class="btn wishlist-add">加入愿望单</a>
+        </div>
+    </div>
+</div>
+<div class="detail-wrap">
+    <div class="detail-tab-con">
+        <ul class="tab-list">
+            <li class="tab-item active">详细描述</li>
+        </ul>
+    </div>
+    <div class="detail-con">
+        {{{detail}}}
+    </div>
+</div>

@@ -9,6 +9,8 @@ $formLineHeight:30px;
         display: inline-block;
         text-align: right;
         font-weight: bold;
+        text-align: justify;
+        text-align-last: justify;
     }
     @mixin valuePart {
         display: inline-block;
@@ -29,6 +31,6 @@ $formLineHeight:30px;
     }
 }
 
-.btn-submit{
+.btn-submit {
     float: right;
 }

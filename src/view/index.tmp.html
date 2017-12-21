@@ -3,16 +3,72 @@
 
 <head>
     <%= require('html-loader!./layout/head-common.html') %>
-    <title><%= htmlWebpackPlugin.options.title %>-玄换</title>
+        <title>
+            <%= htmlWebpackPlugin.options.title %>-玄换</title>
 </head>
+<!-- 图书,数码,服装,饰品,母婴 -->
 
 <body>
     <div class="content">
         <%= require('html-loader!./layout/nav.html') %>
         <%= require('html-loader!./layout/header.html') %>
-        <div class="page-wrap w">
-            <%= require('html-loader!./layout/nav-side.html') %>
-            <div class="content with-nav">test</div>
+        <div class="w floatfix">
+            <ul class="keyword-list">
+            </ul>
+            <div class="banner-con">
+                <div class="loading"></div>
+            </div>
+        </div>
+
+        <div class="w">
+            <div class="floor-appliance floor-wrap">
+                <h1 class="floor-title">
+                    <a href="./list.html?categoryId=" class="link">F1 影音数码</a>
+                </h1>
+                <ul class="floor-list">
+                    <div class="loading"></div>
+                </ul>
+            </div>
+            <div class="floor-digital floor-wrap">
+                <h1 class="floor-title">
+                    <a href="./list.html?categoryId=" class="link">F2 闲置数码</a>
+                </h1>
+                <ul class="floor-list">
+                    <div class="loading"></div>
+                </ul>
+            </div>
+            <div class="floor-dress floor-wrap">
+                <h1 class="floor-title">
+                    <a href="./list.html?categoryId=" class="link">F3 鞋服配饰</a>
+                </h1>
+                <ul class="floor-list">
+                    <div class="loading"></div>
+                </ul>
+            </div>
+            <div class="floor-accessory floor-wrap">
+                <h1 class="floor-title">
+                    <a href="./list.html?categoryId=" class="link">F4 珠宝收藏</a>
+                </h1>
+                <ul class="floor-list">
+                    <div class="loading"></div>
+                </ul>
+            </div>
+            <div class="floor-maternal floor-wrap">
+                <h1 class="floor-title">
+                    <a href="./list.html?categoryId=" class="link">F5 母婴玩具</a>
+                </h1>
+                <ul class="floor-list">
+                    <div class="loading"></div>
+                </ul>
+            </div>
+            <div class="floor-book floor-wrap">
+                <h1 class="floor-title">
+                    <a href="./list.html?categoryId=" class="link">F6 二手图书</a>
+                </h1>
+                <ul class="floor-list">
+                    <div class="loading"></div>
+                </ul>
+            </div>
         </div>
     </div>
     <%= require('html-loader!./layout/footer.html') %>

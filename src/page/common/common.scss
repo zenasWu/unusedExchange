@@ -156,10 +156,10 @@ table {
     background-size: cover;
     height: 100px;
     width: 100px;
-    margin: 10px auto;
+    margin: 0 auto;
 }
 
-html {
+html{
     height: 100%;
 }
 
@@ -174,19 +174,28 @@ body {
     flex: 1;
 }
 
+.floatfix {
+    zoom: 1;
+}
+
+.floatfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
 .panel {
     padding: 10px;
     background: #ffffff;
-    .panel-title{
+    .panel-title {
         padding: 10px;
         font-size: 18px;
         color: #666666;
         font-weight: bold;
         border-bottom: 1px solid #eeeeee;
     }
-    .panel-body{
+    .panel-body {
         padding: 10px;
         overflow: hidden;
     }
 }
-

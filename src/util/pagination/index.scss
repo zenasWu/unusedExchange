@@ -1,0 +1,32 @@
+@import '../../page/common/glob.scss';
+.pg-content {
+    text-align: center;
+    color: #333333;
+    .pg-item {
+        display: inline-block;
+        height: 36px;
+        line-height: 36px;
+        padding: 0 16px;
+        margin: 0 2px;
+        border: 1px solid #cccccc;
+        background: #eeeeee;
+        cursor: pointer;
+        font-size: 14px;
+        user-select: none;
+        &.disabled {
+            color: #cccccc;
+            background: none;
+            cursor: auto;
+        }
+        &.active {
+            border: 1px solid $themeColor;
+            background: $themeColor;
+            color: white;
+            cursor: auto;
+        }
+    }
+    .pg-total {
+        margin-left: 20px;
+        font-size: 14px;
+    }
+}
