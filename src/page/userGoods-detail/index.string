@@ -1,0 +1,86 @@
+<div class="panel-title">
+    {{#goodId}}
+    <h1 class="modal-title">更新闲置物品信息</h1>
+    {{/goodId}} {{^goodId}}
+    <h1 class="modal-title">发布闲置物品</h1>
+    {{/goodId}}
+</div>
+<div class="panel-body">
+    <div class="form">
+        <div class="form-line">
+            <label for="" class="label">
+                <span class="require">*</span>名字:
+            </label>
+            <input type="text" class="form-item" id="good-name" placeholder="请输入闲置物品名称" value="{{data.name}}">
+        </div>
+        <div class="form-line">
+            <label for="" class="label">副标题:</label>
+            <input type="text" class="form-item" id="good-subtitle" placeholder="请输入副标题" value="{{data.subtitle}}">
+        </div>
+        <div class="form-line">
+            <label for="" class="label">
+                <span class="require">*</span>产品品类:
+            </label>
+            <select name="" id="good-categoryId" class="form-item">
+                <option value="1">影音家电</option>
+                <option value="2">闲置数码</option>
+                <option value="3">鞋服配饰</option>
+                <option value="4">珠宝收藏</option>
+                <option value="5">母婴玩具</option>
+                <option value="6">二手图书</option>
+            </select>
+            <label for="" class="label">
+                <span class="require">*</span>交易方式:
+            </label>
+            <select name="" id="good-trading" class="form-item">
+                <option value="1">线上交易</option>
+                <option value="2">线下交易</option>
+            </select>
+        </div>
+        <div class="form-line">
+            <label for="" class="label">
+                <span class="require">*</span>所在城市:
+            </label>
+            <select name="" id="good-province" class="form-item">
+            </select>
+            <select name="" id="good-city" class="form-item">
+                <option value="">请选择</option>
+            </select>
+        </div>
+        <div class="form-line">
+            <label for="" class="label">
+                <span class="require">*</span>详细地址:
+            </label>
+            <input type="text" class="form-item" id="good-address" placeholder="请输入详细地址" value="{{data.address}}">
+        </div>
+        <div class="form-line">
+            <label for="" class="label">
+                <span class="require">*</span>联系方式:
+            </label>
+            <input type="text" class="form-item" id="good-contact" placeholder="请输入联系方式" value="{{data.contact}}">
+        </div>
+        <div class="form-line">
+            <label for="" class="label">成色:</label>
+            <input type="text" class="form-item" id="good-quality" placeholder="产品新旧程度" value="{{data.quality}}">
+        </div>
+        <div class="form-line">
+            <label for="" class="label">产品描述:</label>
+            <textarea name="" class="form-item" id="good-detail">{{data.detail}}</textarea>
+        </div>
+        <div class="form-line">
+            <label for="" class="label">
+                <span class="require">*</span>上传图片:</label>
+            <div class="form-item" id="good-image">
+                <div class="dz-message">点击添加图片
+                    <strong>(最多5张)</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-line">
+            <a class="btn submit-btn">
+                <input type="hidden" id="receiver-id" value="{{data.id}}"> 保存物品信息
+            </a>
+        </div>
+    </div>
+</div>

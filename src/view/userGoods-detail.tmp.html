@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <%= require('html-loader!./layout/head-common.html') %>
+        <title>
+            <%= htmlWebpackPlugin.options.title %>-玄换</title>
+</head>
+
+<body>
+    <div class="content">
+        <%= require('html-loader!./layout/nav-simple.html') %>
+        <div class="page-wrap w">
+            <div class="panel detail-con">
+                
+            </div>
+        </div>
+    </div>
+    <%= require('html-loader!./layout/footer.html') %>
+</body>
+
+</html>

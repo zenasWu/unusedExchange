@@ -7,7 +7,13 @@ var _product = {
         _xh.request({
             url: _xh.getServerUrl('/product/category_hottest.do'),
             data: data,
-            method: 'GET',
+            success: resolve,
+            error: reject,
+        })
+    },
+    getBanner: function (resolve, reject) {
+        _xh.request({
+            url: _xh.getServerUrl('/product/get_banner.do'),
             success: resolve,
             error: reject,
         })

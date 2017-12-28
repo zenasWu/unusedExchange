@@ -1,0 +1,64 @@
+@import '../common/glob.scss';
+.goodlist-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fafafa;
+    margin-bottom: 28px;
+    &.header {
+        background: #eeeeee;
+    }
+    .cell {
+        padding: 10px 0;
+        color: #666666;
+        border-bottom: 1px solid #eeeeee;
+    }
+    .good-info {
+        background: #eeeeee;
+        padding: 10px 20px;
+        color: #999999;
+    }
+    .good-text {
+        margin-right: 25px;
+    }
+    .operate {
+        float: right;
+    }
+    .good-num {
+        font-weight: bold;
+    }
+    .cell-img {
+        padding: 10px;
+        width: 15%;
+        text-align: center;
+        img {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #dddddd;
+        }
+    }
+    .cell-info {
+        width: 55%;
+        text-align: left;
+    }
+    .cell-status {
+        width: 30%;
+        font-size: 14px;
+        text-align: left;
+        a {
+            font-weight: bold;
+        }
+    }
+    .fa-handshake {
+        color: #3B5998
+    }
+    .fa-comment {
+        color: #01C312
+    }
+    .fa-frown {
+        color: #2C4762
+    }
+}
+
+
+
+

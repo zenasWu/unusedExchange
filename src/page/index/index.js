@@ -35,40 +35,11 @@ var page = {
             maternal: 5,
             book: 6
         },
-        bannerList: [{
-            href: './list.html?categoryId=1',
-            imageHost: '/img/banner/',
-            bannerImage: 'banner1.jpg'
-        },{
-            href: './list.html?categoryId=2',
-            imageHost: '/img/banner/',
-            bannerImage: 'banner2.jpg'
-        },{
-            href: './list.html?categoryId=3',
-            imageHost: '/img/banner/',
-            bannerImage: 'banner3.jpg'
-        },{
-            href: './list.html?categoryId=4',
-            imageHost: '/img/banner/',
-            bannerImage: 'banner4.jpg'
-        },{
-            href: './list.html?categoryId=5',
-            imageHost: '/img/banner/',
-            bannerImage: 'banner5.jpg'
-        },{
-            href: './list.html?categoryId=6',
-            imageHost: '/img/banner/',
-            bannerImage: 'banner6.jpg'
-        }]
-
     },
-
-    init: function (option) {
-        // option = Object.assign(this.option, option);
+    init: function () {
         this.renderKeyword();
         this.renderFloor();
         this.renderBanner();
-        return this;
     },
 
     renderKeyword: function () {
@@ -106,17 +77,21 @@ var page = {
     },
 
     renderBanner: function () {
-        var bannerHtml = _xh.renderHtml(bannerTmp,{
-            List:this.option.bannerList
-        });
-        $(".banner-con").html(bannerHtml);
-        $('.banner').unslider({
-            infinite: true,
-            arrows: {
-                prev: '<a class="unslider-arrow prev"><i class="fas fa-angle-left"></i></a>',
-                next: '<a class="unslider-arrow next"><i class="fas fa-angle-right"></i></a>'
-            }
-        });
+        _product.getBanner(function (res) {
+            var bannerHtml = _xh.renderHtml(bannerTmp, {
+                list: res
+            });
+            $(".banner-con").html(bannerHtml);
+            $('.banner').unslider({
+                infinite: true,
+                arrows: {
+                    prev: '<a class="unslider-arrow prev"><i class="fas fa-angle-left"></i></a>',
+                    next: '<a class="unslider-arrow next"><i class="fas fa-angle-right"></i></a>'
+                }
+            });
+        },function(errMsg){
+            $('.banner').html('<p class="err-tip">获取图片失败</p>');
+        })
     }
 }
 

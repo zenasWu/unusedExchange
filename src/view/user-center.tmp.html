@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn-Hans">
 
 <head>
     <%= require('html-loader!./layout/head-common.html') %>
@@ -8,6 +8,7 @@
 
 <body>
     <div class="content">
+        <%= require('html-loader!./layout/nav.html') %>
         <%= require('html-loader!./layout/header.html') %>
         <div class="crumb">
             <div class="w">
@@ -20,10 +21,10 @@
         </div>
         <div class="page-wrap w">
             <%= require('html-loader!./layout/nav-side.html') %>
-            <div class="content with-nav">
+            <div class="container with-nav">
                 <div class="panel">
                     <div class="panel-title">
-                        个人中心
+                        <%= htmlWebpackPlugin.options.title %>
                     </div>
                     <div class="panel-body">
                         <div class="user-info">

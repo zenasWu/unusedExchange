@@ -1,7 +1,6 @@
 'use strict';
 require('./index.scss');
 require('../common/nav-simple/index.js');
-var $ = require('jquery');
 var _xh = require('../../util/util.js');
 var _user = require('../../service/user-service.js');
 //登陆页面

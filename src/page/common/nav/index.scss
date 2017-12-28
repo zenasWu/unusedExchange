@@ -1,26 +1,23 @@
-.nav{
+.nav {
     height: 36px;
     line-height: 36px;
-    border-bottom: 1px  solid #dddddd;
-    background: #F5F5F5;
-
+    border-bottom: 1px solid #dddddd;
+    background: #F5F5F5; 
+    min-width: 1080px;
     // 用户
-    .user{
+    .user {
         float: left;
         padding-left: 10px;
-        .link{
+        .link {
             margin-right: 6px;
         }
-
-        &.login{
+        &.login {
             display: none;
         }
-    }
-
-    // 导航
-    .nav-list{
+    } // 导航
+    .nav-list {
         float: right;
-        .nav-item{
+        .nav-item {
             display: inline-block;
             margin-left: 6px;
         }

@@ -1,10 +1,9 @@
 'use strict';
-const $ = require('jquery');
 const hogan = require('hogan');
-
+var $ = require('jquery');
 
 var conf = {
-    // serverHost:'http://localhost:8080',
+    // serverHost:'http://api.xuanhuan.com',
     serverHost:'',
 }
 var _util = {

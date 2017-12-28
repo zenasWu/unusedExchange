@@ -1,0 +1,54 @@
+.panel {
+    width: 700px;
+    margin: 20px auto;
+    .panel-title {
+        padding-left: 40px;
+    }
+    .panel-body {
+        // form部分
+        padding-left: 40px;
+        .form-line {
+            margin: 5px 0;
+            display: flex;
+            .label {
+                display: block;
+                width: 80px;
+                text-align: right;
+                height: 30px;
+                line-height: 30px;
+                margin-right: 10px;
+                cursor: pointer;
+                .require {
+                    color: red;
+                }
+            }
+            .form-item {
+                outline: none;
+                margin-right: 10px;
+                padding: 0 5px;
+                width: 486px;
+            }
+            input.form-item,select.form-item,textarea.form-item{
+                border: 1px solid #666666;
+            }
+            select.form-item {
+                width: 130px;
+            }
+            textarea.form-item {
+                resize: none;
+                height: 300px;
+            }
+            #good-image {
+                box-sizing: border-box;
+                width: 500px;
+                border: 2px dashed #666666;
+            }
+            .btn {
+                margin-left: 90px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 14px;
+            }
+        }
+    }
+}

@@ -1,9 +1,11 @@
 'use strict';
 require('./index.scss');
 require('../common/header/index.js');
+require('../common/nav/index.js');
 var _xh = require('../../util/util.js');
+var _user = require('../../service/user-service.js');
 var _product = require('../../service/product-service.js');
-var _wishlist = require('../../service/wishList-service.js');
+var _wishlist = require('../../service/wishlist-service.js');
 var tempString = require('./index.string');
 
 var page = {
@@ -32,12 +34,10 @@ var page = {
         })
         // 加入心愿单
         $(document).on('click','.wishlist-add',function(){
-            _wishlist.addToWishlist({
-                productId:_this.data.productId,
-            },function(){
-                window.location.href = './result.html?type=wishlist-add';
+            _user.getUserInfo(function(res){
+                window.location.href = './wishlist-add.html?productId='+_this.data.productId;
             },function(errMsg){
-                _xh.errorTips(errMsg);
+                _xh.doLogin();
             })
         })
     },
@@ -50,7 +50,7 @@ var page = {
         _product.getProductDetail({
             productId:this.data.productId
         },function(res){
-            res.subImages = res.subImages.split(',');
+            // res.subImages = res.subImages.split(',');
             html=_xh.renderHtml(tempString,res);
             pagewrap.html(html);
         },function(errMsg){

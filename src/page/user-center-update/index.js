@@ -1,6 +1,7 @@
 'use strict';
 require('./index.scss');
 require('../common/header/index.js');
+require('../common/nav/index.js');
 var navSide = require('../common/nav-side/index.js');
 var _xh = require('../../util/util.js');
 var _user = require('../../service/user-service.js');

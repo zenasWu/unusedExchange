@@ -1,7 +1,6 @@
 
 'use strict';
 require('./index.scss');
-var $ = require('jquery');
 var _xh = require('../../../util/util.js');
 var tempString = require('./index.string')
 
@@ -12,8 +11,8 @@ var navSide = {
         activeName:'',
         navList :[
             {name:'user-center',desc:'个人中心',href:'./user-center.html'},
-            {name:'user-wanted',desc:'愿望单',href:'./user-wanted.html'},
-            {name:'user-release',desc:'我的闲置',href:'/user-release.html'},
+            {name:'wishlist',desc:'愿望清单',href:'./wishlist.html'},
+            {name:'userGoods',desc:'我的闲置',href:'./userGoods.html'},
             {name:'pw-update',desc:'修改密码',href:'./user-pw-update.html'},
             {name:'about',desc:'关于玄换',href:'./about.html'}
         ]

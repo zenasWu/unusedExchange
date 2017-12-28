@@ -1,9 +1,10 @@
 'use strict';
 require('./index.scss');
 require('../common/header/index.js');
+require('../common/nav/index.js');
 var _xh = require('../../util/util.js');
 var _product = require('../../service/product-service.js');
-var Pagination = require('../../util/pagination/index.js')
+var Pagination = require('../../util/pagination/index.js');
 var tempString = require('./index.string');
 
 var page = {

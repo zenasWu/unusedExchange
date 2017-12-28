@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn-Hans">
 
 <head>
     <%= require('html-loader!./layout/head-common.html') %>
-        <title>
-            <%= htmlWebpackPlugin.options.title %>-玄换</title>
+    <title>
+    <%= htmlWebpackPlugin.options.title %>-玄换</title>
 </head>
 
 <body>
     <div class="content">
+        <%= require('html-loader!./layout/nav.html') %>
         <%= require('html-loader!./layout/header.html') %>
         <div class="crumb">
             <div class="w">

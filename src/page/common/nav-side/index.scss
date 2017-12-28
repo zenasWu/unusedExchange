@@ -4,6 +4,7 @@ $infinity:9999px;
     float: left;
     width: 150px;
     min-height: 50px;
+    padding-top: 22px;
     // 两栏自适应登高布局
     // margin-bottom: -$infinity;
     // padding-bottom: $infinity;
@@ -22,7 +23,7 @@ $infinity:9999px;
     }
 }
 
-.content.with-nav {
+.container.with-nav {
     float: left;
     width: 930px;
     // margin-bottom: -$infinity;

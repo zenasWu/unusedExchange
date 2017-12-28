@@ -1,0 +1,38 @@
+<table class="wishlist-table header">
+    <tr>
+        <th class="cell cell-img">&nbsp;</th>
+        <th class="cell cell-info">产品信息</th>
+        <th class="cell cell-address">地址</th>
+        <th class="cell cell-contact">联系方式</th>
+        <th class="cell cell-trading">交易方式</th>
+    </tr>
+</table>
+{{#list}}
+<table class="wishlist-table wish-item" data-wish-no="{{wishNo}}">
+    <tr>
+        <td colspan="5" class="wish-info">
+            <span class="wish-text wish-num">单号:{{wishNo}}</span>
+            <span class="wish-text">{{createTime}}</span>
+            <span class="wish-text">收件人:{{receiverName}}</span>
+            <span class="wish-text">状态:{{statusDesc}}</span>
+            <span class="wish-text delete-wish link">删除</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="cell cell-img">
+            <a href="./detail.html?productId={{productId}}" class="link" target="_blank">
+                <img src="{{imageHost}}{{productImage}}" class="p-img" alt="{{productName}}">
+            </a>
+        </td>
+        <td class="cell cell-info">
+            <a href="./detail.html?productId={{productId}}" class="link" target="_blank">{{productName}}</a>
+        </td>
+        <td class="cell cell-address">{{location}}</td>
+        <td class="cell cell-contact">{{contact}}</td>
+        <td class="cell cell-trading">{{tardingTypeDesc}}</td>
+    </tr>
+</table>
+{{/list}}
+{{^list}}
+<p class="err-tip">您暂时还没有想要的物品,快去剁手吧</p>
+{{/list}}

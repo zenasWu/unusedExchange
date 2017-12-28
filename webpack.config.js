@@ -2,21 +2,23 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-var SpritesmithPlugin = require('webpack-spritesmith');
+const SpritesmithPlugin = require('webpack-spritesmith');
 
-var getHtmlConfig = function (name,title) {
+var getHtmlConfig = function (name, title) {
   return {
     filename: 'view/' + name + '.html',
     template: 'src/view/' + name + '.tmp.html',
     title: 'xuanhuan',
+    favicon: './favicon.ico',
     inject: true,
-    hash: true,
-    title:title,
+    title: title,
     chunks: ['common', name]
   }
 }
 
 module.exports = {
+  devtool: "cheap-module-source-map",
+
   entry: {
     'common': path.resolve(__dirname, 'src', 'page', 'common', 'index'),
     'index': path.resolve(__dirname, 'src', 'page', 'index', 'index'),
@@ -29,6 +31,12 @@ module.exports = {
     'user-center-update': path.resolve(__dirname, 'src', 'page', 'user-center-update', 'index'),
     'user-pw-update': path.resolve(__dirname, 'src', 'page', 'user-pw-update', 'index'),
     'detail': path.resolve(__dirname, 'src', 'page', 'detail', 'index'),
+    'wishlist-add': path.resolve(__dirname, 'src', 'page', 'wishlist-add', 'index'),
+    'wishlist': path.resolve(__dirname, 'src', 'page', 'wishlist', 'index'),
+    'userGoods': path.resolve(__dirname, 'src', 'page', 'userGoods', 'index'),
+    'userGoods-detail': path.resolve(__dirname, 'src', 'page', 'userGoods-detail', 'index'),
+    'userGoods-trading': path.resolve(__dirname, 'src', 'page', 'userGoods-trading', 'index'),
+    'about': path.resolve(__dirname, 'src', 'page', 'about', 'index'),
   },
 
   output: {
@@ -36,8 +44,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     //devserver
     publicPath: '/',
-    //build
-    // publicPath:"../"
   },
 
   module: {
@@ -68,7 +74,7 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
         exclude: path.resolve(__dirname, 'node_modules'),
         loader: 'url-loader?limit=128&name=assets/[name].[ext]'
-      },{
+      }, {
         test: /\.string$/,
         include: path.resolve(__dirname, 'src'),
         exclude: path.resolve(__dirname, 'node_modules'),
@@ -95,26 +101,32 @@ module.exports = {
   devServer: {
     publicPath: '/',
     port: 9090,
-    contentBase:path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, 'dist'),
     openPage: 'view/',
     inline: true,
     // inline:false,
-    // stats: "errors-only",
+    stats: "errors-only",
     // hot:true
   },
 
   plugins: [
     //html模板处理
-    new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
-    new HtmlWebpackPlugin(getHtmlConfig('result','结果')),
-    new HtmlWebpackPlugin(getHtmlConfig('list','物品列表')),
-    new HtmlWebpackPlugin(getHtmlConfig('user-login','登录')),
-    new HtmlWebpackPlugin(getHtmlConfig('user-register','注册')),
-    new HtmlWebpackPlugin(getHtmlConfig('user-pw-reset','注册')),
-    new HtmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),
-    new HtmlWebpackPlugin(getHtmlConfig('user-center-update','修改个人信息')),
-    new HtmlWebpackPlugin(getHtmlConfig('user-pw-update','修改密码')),
-    new HtmlWebpackPlugin(getHtmlConfig('detail','物品详情页')),
+    new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+    new HtmlWebpackPlugin(getHtmlConfig('result', '结果')),
+    new HtmlWebpackPlugin(getHtmlConfig('list', '物品列表')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-login', '登录')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-register', '注册')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-pw-reset', '注册')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-center', '用户中心')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-pw-update', '修改密码')),
+    new HtmlWebpackPlugin(getHtmlConfig('detail', '物品详情页')),
+    new HtmlWebpackPlugin(getHtmlConfig('wishlist-add', '加入愿望单')),
+    new HtmlWebpackPlugin(getHtmlConfig('wishlist', '愿望清单')),
+    new HtmlWebpackPlugin(getHtmlConfig('userGoods', '我的闲置')),
+    new HtmlWebpackPlugin(getHtmlConfig('userGoods-detail', '闲置物品信息')),
+    new HtmlWebpackPlugin(getHtmlConfig('userGoods-trading', '闲置物品交换')),
+    new HtmlWebpackPlugin(getHtmlConfig('about', '关于玄换')),
 
 
     // 独立通用模块
@@ -140,7 +152,5 @@ module.exports = {
       }
     })
 
-    // new webpack.NamedModulesPlugin(),
-    // new webpack.HotModuleReplacementPlugin()
   ],
 };

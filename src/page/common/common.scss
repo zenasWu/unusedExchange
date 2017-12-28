@@ -185,6 +185,7 @@ body {
 }
 
 .panel {
+    margin-top: 10px;
     padding: 10px;
     background: #ffffff;
     .panel-title {
@@ -198,4 +199,10 @@ body {
         padding: 10px;
         overflow: hidden;
     }
+}
+
+.err-tip{
+    text-align: center;
+    margin: 10px auto;
+    color: red;
 }

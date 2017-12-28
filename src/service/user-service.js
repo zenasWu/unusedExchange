@@ -76,7 +76,7 @@ var _user = {
 
     getUserInfo: function (resolve, reject) {
         _xh.request({
-            url: _xh.getServerUrl('/user/get_user_info.do'),
+            url: _xh.getServerUrl('/user/get_information.do'),
             method: 'POST',
             success: resolve,
             error: reject,

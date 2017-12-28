@@ -1,6 +1,5 @@
 'use strict';
 require('./index.scss');
-var $ = require('jquery');
 var _xh = require('../../../util/util.js');
 
 //通用头部
