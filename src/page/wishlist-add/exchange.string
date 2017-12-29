@@ -1,0 +1,31 @@
+<table class="exchange-table">
+    <tr>
+        <th class="cell-check">&nbsp;</th>
+        <th class="cell-img">&nbsp;</th>
+        <th class="cell-info">商品描述</th>
+        <th class="cell-address">地址</th>
+        <th class="cell-quality">成色</th>
+    </tr>
+    {{#list}}
+    <tr class="exchange-item" data-product-id="{{productId}}">
+        <td class="cell-check">
+            <input type="radio" name="exchange" class="exchange-select">
+        </td>
+        <td class="cell-img">
+            <a href="./detail.html?productId={{productId}}" target="_blank">
+                <img src="{{imageHost}}{{productImage}}" alt="{{productName}}" class="p-img">
+            </a>
+        </td>
+        <td class="cell-info">
+            <a href="./detail.html?productId={{productId}}" class="link" target="_blank">{{productName}}</a>
+        </td>
+        <td class="cell-address">{{productAddress}}</td>
+        <td class="cell-quality">{{productQuality}}</td>
+    </tr>
+    {{/list}}
+</table>
+<div class="pagination"></div>
+<div class="submit-con">
+    <span class="btn ruturn-to-product">返回上一步</span>
+    <span class="btn exchange-submit">加入愿望单</span>
+</div>

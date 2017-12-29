@@ -1,0 +1,11 @@
+<div class="banner">
+    <ul>
+        {{#list}}
+        <li class="banner-item">
+            <a href="{{href}}" target="_blank">
+                <img src="{{imageHost}}{{bannerImage}}" alt="" class="banner-img">
+            </a>
+        </li>
+        {{/list}}
+    </ul>
+</div>

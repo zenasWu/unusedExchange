@@ -1,0 +1,208 @@
+/* css reset */
+
+@import './glob.scss';
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px/1.5 tahoma, arial;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+em {
+    font-style: normal;
+}
+
+small {
+    font-size: 12px;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+label {
+    cursor: pointer;
+}
+
+legend {
+    color: #000;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* 定宽布局 */
+
+.w {
+    width: 1080px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* 全局通用样式 */
+
+.hide {
+    display: none;
+}
+
+.link,
+.link:visited {
+    color: #666666;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: $themeColor
+}
+
+.link-text {
+    color: #666666;
+    text-decoration: none;
+    cursor: default;
+}
+
+
+/* btn */
+
+.btn {
+    display: inline-block;
+    padding: 0 20px;
+    font-size: 17px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    background: $themeColor;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none
+}
+
+.btn-mini {
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+.loading {
+    display: block;
+    background: url('../../image/loading.gif');
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+html{
+    height: 100%;
+}
+
+body {
+    background: #dbdbdb;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+.floatfix {
+    zoom: 1;
+}
+
+.floatfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.panel {
+    margin-top: 10px;
+    padding: 10px;
+    background: #ffffff;
+    .panel-title {
+        padding: 10px;
+        font-size: 18px;
+        color: #666666;
+        font-weight: bold;
+        border-bottom: 1px solid #eeeeee;
+    }
+    .panel-body {
+        padding: 10px;
+        overflow: hidden;
+    }
+}
+
+.err-tip{
+    text-align: center;
+    margin: 10px auto;
+    color: red;
+}

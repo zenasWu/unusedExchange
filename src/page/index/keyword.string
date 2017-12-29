@@ -1,0 +1,36 @@
+<li class="keyword-item">
+    <span class="keyword-category">影音家电:</span>
+    {{#appliance}}
+    <a href="./list.html?keyword={{.}}" class="link" target="_blank">{{.}}</a>
+    {{/appliance}}
+</li>
+<li class="keyword-item">
+    <span class="keyword-category">闲置数码:</span>
+    {{#digital}}
+    <a href="./list.html?keyword={{.}}" class="link" target="_blank">{{.}}</a>
+    {{/digital}}
+</li>
+<li class="keyword-item">
+    <span class="keyword-category">鞋服配饰:</span>
+    {{#dress}}
+    <a href="./list.html?keyword={{.}}" class="link" target="_blank">{{.}}</a>
+    {{/dress}}
+</li>
+<li class="keyword-item">
+    <span class="keyword-category">珠宝收藏:</span>
+    {{#accessory}}
+    <a href="./list.html?keyword={{.}}" class="link" target="_blank">{{.}}</a>
+    {{/accessory}}
+</li>
+<li class="keyword-item">
+    <span class="keyword-category">母婴玩具:</span>
+    {{#maternal}}
+    <a href="./list.html?keyword={{.}}" class="link" target="_blank">{{.}}</a>
+    {{/maternal}}
+</li>
+<li class="keyword-item">
+    <span class="keyword-category">二手图书:</span>
+    {{#book}}
+    <a href="./list.html?keyword={{.}}" class="link" target="_blank">{{.}}</a>
+    {{/book}}
+</li>

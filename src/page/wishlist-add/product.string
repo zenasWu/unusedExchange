@@ -1,0 +1,26 @@
+<table class="product-table">
+    <tr>
+        <th class="cell-img">&nbsp;</th>
+        <th class="cell-info">商品描述</th>
+        <th class="cell-address">地址</th>
+        <th class="cell-quality">成色</th>
+        <th class="cell-trading">交易方式</th>
+    </tr>
+    <tr>
+        <td class="cell-img">
+            <a href="./detail.html?productId={{productId}}" target="_blank">
+                <img src="{{imageHost}}{{productImage}}" alt="{{productName}}" class="p-img">
+            </a>
+        </td>
+        <td class="cell-info">
+            <a href="./detail.html?productId={{productId}}" class="link" target="_blank">{{productName}}</a>
+        </td>
+        <td class="cell-address">{{address}} </td>
+        <td class="cell-quality">{{quality}}</td>
+        <td class="cell-trading">{{trading}}</td>
+    </tr>
+</table>
+
+<div class="submit-con">
+    <span class="btn product-submit">选择交换物品</span>
+</div>

@@ -1,0 +1,20 @@
+@import '../glob.scss';
+
+.nav-simple{
+    height: 80px;
+    line-height: 80px;
+    background: $themeColor;
+
+    .logo{
+        font-size: 36px;
+        font-weight: bold;
+        &:visited{
+            color: #000000;
+        }
+    }
+
+    small{
+        font-size: 14px;
+        padding-left: 6px;
+    }
+}

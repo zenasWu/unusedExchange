@@ -2,30 +2,48 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const SpritesmithPlugin = require('webpack-spritesmith');
 
-var getHtmlConfig = function (name) {
+var getHtmlConfig = function (name, title) {
   return {
-    filename: name + '.html',
+    filename: 'view/' + name + '.html',
     template: 'src/view/' + name + '.tmp.html',
     title: 'xuanhuan',
+    favicon: './favicon.ico',
     inject: true,
-    hash: true,
-    chunks: ['common', name],
-    cache:false
+    title: title,
+    chunks: ['common', name]
   }
 }
 
 module.exports = {
+  devtool: "cheap-module-source-map",
+
   entry: {
     'common': path.resolve(__dirname, 'src', 'page', 'common', 'index'),
     'index': path.resolve(__dirname, 'src', 'page', 'index', 'index'),
-    'login': path.resolve(__dirname, 'src', 'page', 'login', 'index')
+    'list': path.resolve(__dirname, 'src', 'page', 'list', 'index'),
+    'result': path.resolve(__dirname, 'src', 'page', 'result', 'index'),
+    'user-login': path.resolve(__dirname, 'src', 'page', 'user-login', 'index'),
+    'user-register': path.resolve(__dirname, 'src', 'page', 'user-register', 'index'),
+    'user-pw-reset': path.resolve(__dirname, 'src', 'page', 'user-pw-reset', 'index'),
+    'user-center': path.resolve(__dirname, 'src', 'page', 'user-center', 'index'),
+    'user-center-update': path.resolve(__dirname, 'src', 'page', 'user-center-update', 'index'),
+    'user-pw-update': path.resolve(__dirname, 'src', 'page', 'user-pw-update', 'index'),
+    'detail': path.resolve(__dirname, 'src', 'page', 'detail', 'index'),
+    'wishlist-add': path.resolve(__dirname, 'src', 'page', 'wishlist-add', 'index'),
+    'wishlist': path.resolve(__dirname, 'src', 'page', 'wishlist', 'index'),
+    'userGoods': path.resolve(__dirname, 'src', 'page', 'userGoods', 'index'),
+    'userGoods-detail': path.resolve(__dirname, 'src', 'page', 'userGoods-detail', 'index'),
+    'userGoods-trading': path.resolve(__dirname, 'src', 'page', 'userGoods-trading', 'index'),
+    'about': path.resolve(__dirname, 'src', 'page', 'about', 'index'),
   },
 
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    //devserver
+    publicPath: '/',
   },
 
   module: {
@@ -36,6 +54,8 @@ module.exports = {
         loader: 'babel-loader',
       }, {
         test: /\.css$/,
+        include: path.resolve(__dirname, 'src'),
+        exclude: path.resolve(__dirname, 'node_modules'),
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader', 'postcss-loader']
@@ -50,30 +70,64 @@ module.exports = {
           use: ['css-loader', 'postcss-loader', 'sass-loader']
         })
       }, {
-        test: /\.(gif|png|jpg)\??.*$/,
-        loader: 'url-loader?limit=8192&name=images/[name].[ext]'
+        test: /\.(gif|png|jpg|woff|woff2|eot|svg|ttf)\??.*$/,
+        include: path.resolve(__dirname, 'src'),
+        exclude: path.resolve(__dirname, 'node_modules'),
+        loader: 'url-loader?limit=128&name=assets/[name].[ext]'
+      }, {
+        test: /\.string$/,
+        include: path.resolve(__dirname, 'src'),
+        exclude: path.resolve(__dirname, 'node_modules'),
+        loader: 'html-loader',
       }
     ]
   },
 
   resolve: {
-    extensions: ['.json', '.js', '.jsx', '.scss']
+    alias: {
+      src: path.resolve(__dirname, 'src'),
+      util: path.resolve(__dirname, 'src', 'util'),
+      page: path.resolve(__dirname, 'src', 'page'),
+      server: path.resolve(__dirname, 'src', 'server'),
+      img: path.resolve(__dirname, 'src', 'image')
+    },
+    modules: ["node_modules", "build/image"]
+  },
+
+  externals: {
+    'jquery': 'window.jQuery',
   },
 
   devServer: {
     publicPath: '/',
+    port: 9090,
     contentBase: path.resolve(__dirname, 'dist'),
-    port:9090,
+    openPage: 'view/',
+    inline: true,
     // inline:false,
-    inline:true,
-    // hot:true,
-    // stats: "errors-only"
+    stats: "errors-only",
+    // hot:true
   },
 
   plugins: [
     //html模板处理
-    new HtmlWebpackPlugin(getHtmlConfig('index')),
-    new HtmlWebpackPlugin(getHtmlConfig('login')),
+    new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+    new HtmlWebpackPlugin(getHtmlConfig('result', '结果')),
+    new HtmlWebpackPlugin(getHtmlConfig('list', '物品列表')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-login', '登录')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-register', '注册')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-pw-reset', '注册')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-center', '用户中心')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-pw-update', '修改密码')),
+    new HtmlWebpackPlugin(getHtmlConfig('detail', '物品详情页')),
+    new HtmlWebpackPlugin(getHtmlConfig('wishlist-add', '加入愿望单')),
+    new HtmlWebpackPlugin(getHtmlConfig('wishlist', '愿望清单')),
+    new HtmlWebpackPlugin(getHtmlConfig('userGoods', '我的闲置')),
+    new HtmlWebpackPlugin(getHtmlConfig('userGoods-detail', '闲置物品信息')),
+    new HtmlWebpackPlugin(getHtmlConfig('userGoods-trading', '闲置物品交换')),
+    new HtmlWebpackPlugin(getHtmlConfig('about', '关于玄换')),
+
 
     // 独立通用模块
     new webpack.optimize.CommonsChunkPlugin({
@@ -84,7 +138,19 @@ module.exports = {
     // 抽离css文件
     new ExtractTextPlugin('css/[name].css'),
 
-    // new webpack.NamedModulesPlugin(),
-    // new webpack.HotModuleReplacementPlugin()
+    new SpritesmithPlugin({
+      src: {
+        cwd: path.resolve(__dirname, 'src/image/icon'),
+        glob: '*.png'
+      },
+      target: {
+        image: path.resolve(__dirname, 'src/build', 'image', 'sprite.png'),
+        css: path.resolve(__dirname, 'src/build', 'css', '_sprite.scss'),
+      },
+      apiOptions: {
+        cssImageRef: "~sprite.png"
+      }
+    })
+
   ],
 };

@@ -1,0 +1,12 @@
+{{#list}}
+<li class="floor-item">
+    <div class="floor-img">
+        <a href="{{href}}">
+            <img class="floor-img" src="{{imageHost}}{{mainImage}}" alt="{{name}}" />
+        </a>
+    </div>
+    <p class="floor-text">
+        <a href="{{href}}" class="link">{{name}}</a>
+    </p>
+</li>
+{{/list}}

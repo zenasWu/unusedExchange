@@ -1,0 +1,42 @@
+<table class="goodlist-table header">
+    <tr>
+        <th class="cell cell-img">&nbsp;</th>
+        <th class="cell cell-info">产品信息</th>
+        <th class="cell cell-status">状态</th>
+    </tr>
+</table>
+{{#list}}
+<table class="goodlist-table good-item" data-good-id="{{goodId}}">
+    <tr>
+        <td colspan="3" class="good-info">
+            <span class="good-text good-num">产品编号:{{goodId}}</span>
+            <span class="good-text">{{lastModifyTime}}</span>
+            <div class="operate">
+                <span class="good-text edit-good link">编辑</span>
+                <span class="good-text delete-good link">删除</span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="cell cell-img">
+            <a href="./detail.html?productId={{goodId}}" class="link" target="_blank">
+                <img src="{{imageHost}}{{productImage}}" class="p-img" alt="{{productName}}">
+            </a>
+        </td>
+        <td class="cell cell-info">
+            <a href="./detail.html?productId={{goodId}}" class="link" target="_blank">{{productName}}</a>
+        </td>
+        <td class="cell cell-status">
+            <i class="fas fa-{{statusIcon}}"></i>
+            {{#hasMessage}}
+            <a href="./userGoods-trading.html?goodId={{goodId}}" class="link">{{statusDesc}}(点我)</a>
+            {{/hasMessage}}
+            {{^hasMessage}}
+            <span>{{statusDesc}}</span>
+            {{/hasMessage}}
+        </td>
+    </tr>
+</table>
+{{/list}} {{^list}}
+<p class="err-tips">亲,您还未发布闲置物品</p>
+{{/list}}

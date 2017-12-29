@@ -1,0 +1,27 @@
+.page-wrap {
+    background: white;
+    margin-top: 40px;
+    text-align: center;
+    padding: 30px;
+    .result-con {
+        display: none;
+        padding: 200px 0;
+        .result-title {
+            color: #555555;
+            font-size: 50px;
+        }
+        .result-content {
+            margin-top: 40px;
+            p {
+                font-size: 14px;
+                margin: 6px 0;
+            }
+            .result-link {
+                font-size: 22px;
+                padding: 5px 10px;
+                margin: 0 5px;
+                border: 1px solid #cccccc;
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+<div class="panel">
+    <div class="panel-title">
+        闲置物品信息
+    </div>
+    <div class="panel-body good-panel">
+        <div class="good-img">
+            <a href="./detail.html?productId={{id}}">
+                <img src="{{imageHost}}{{goodImage}}" alt="">
+            </a>
+        </div>
+        <div class="good-info">
+            <div class="text-line">
+                <span class="text">产品名称:{{name}}</span>
+                <span class="text">创建时间:{{createTime}}</span>
+            </div>
+            <div class="text-line">
+                <span class="text">地址:{{location}}</span>
+            </div>
+            <div class="text-line">
+                <span class="text">物品状态:{{status}}</span>
+                <span class="text">交易方式:{{trading}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel">
+    <div class="panel-title">
+        交换列表
+    </div>
+    <div class="panel-body">
+        <table class="exchange-table">
+            <tr>
+                <th class="cell cell-img">&nbsp;</th>
+                <th class="cell cell-info">产品信息</th>
+                <th class="cell cell-address">地址</th>
+                <th class="cell cell-quality">成色</th>
+                <th class="cell cell-contact">联系方式</th>
+                <th class="cell cell-operate">&nbsp;</th>
+            </tr>
+            {{#exchange.list}}
+            <tr data-exchange-id="{{id}}">
+                <td class="cell cell-img">
+                    <a href="./detail.html?productId={{id}}" class="link" target="_blank">
+                        <img src="{{imageHost}}{{exchangeImage}}" class="p-img" alt="{{name}}">
+                    </a>
+                </td>
+                <td class="cell cell-info">
+                    <a href="./detail.html?productId={{id}}" class="link" target="_blank">{{name}}</a>
+                </td>
+                <td class="cell cell-location">{{location}}</td>
+                <td class="cell cell-quality">{{quality}}</td>
+                <td class="cell cell-trading">{{trading}}</td>
+                <td class="cell cell-operate">
+                    <span class="agree">同意</span>
+                    <span class="reject">拒绝</span>
+                </td>
+            </tr>
+            {{/exchange.list}}
+        </table>
+        <div class="pagination"></div>
+    </div>
+</div>

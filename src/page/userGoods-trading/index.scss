@@ -1,0 +1,89 @@
+//闲置物品信息
+.good-panel {
+    display: flex;
+    .good-img {
+        margin: 10px;
+        img {
+            height: 100px;
+            width: 100px;
+            border: 1px solid #eeeeee;
+        }
+    }
+    .good-info {
+        margin: 10px;
+        .text-line {
+            height: 30px;
+            line-height: 30px;
+            .text {
+                margin-right: 30px;
+            }
+        }
+    }
+}
+
+//交换物品列表
+.exchange-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: #fafafa;
+    margin-bottom: 28px;
+    th {
+        background: #eeeeee;
+    }
+    .cell {
+        border-bottom: 2px dashed #eeeeee;
+    }
+    .cell-img {
+        padding: 10px;
+        width: 15%;
+        text-align: center;
+        img {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #dddddd;
+        }
+    }
+    .cell-info {
+        width: 30%;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .cell-address {
+        width: 20%;
+        text-align: left;
+    }
+    .cell-quality {
+        width: 10%;
+        text-align: center;
+    }
+    .cell-trading {
+        width: 10%;
+        text-align: center;
+    }
+    .cell-operate {
+        width: 15%;
+        text-align: center;
+        .reject,
+        .agree {
+            display: inline-block;
+            width: 40px;
+            height: 30px;
+            line-height: 30px;
+            margin: 0 8px;
+            border-radius: 10%;
+            color: #666666;
+            cursor: pointer;
+            &:hover {
+                box-shadow: 2px 2px 6px #333333;
+            }
+        }
+        .reject {
+            background-color: #FE646D;
+        }
+        .agree {
+            background: #2CEAA4;
+        }
+    }
+}
